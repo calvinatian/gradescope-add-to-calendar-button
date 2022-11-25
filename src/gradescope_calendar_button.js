@@ -35,7 +35,7 @@ function add_calendar_col(table) {
     for (let i = 0; i < rows.length; ++i) {
         let th = document.createElement(`th`);
         th.classList.add(NEW_CLASS_NAME);
-        th.innerText = i;
+        th.innerText = ``;
         if (i == 0) {
             th.innerText = `Add to Calendar`;
         }
@@ -134,7 +134,7 @@ for (let i = 0, row; row = table.rows[i]; i++) {
             }
         }
 
-        if (j == 3) {
+        if (j == 3 && dates) {
             // calendar column
             let startDate = dates[0], endDate = dates[1];
             col.innerHTML = createCalendarHTML(startDate, endDate, assignmentName, assignmentLink);;

@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Gradescope Add to Calendar",
-    "version": "0.0.1",
+    "version": "0.0.2",
 
     "description": "Adds a add to calendar button to all student assignments on Gradescope.",
 

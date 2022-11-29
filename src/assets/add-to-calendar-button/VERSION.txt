@@ -1,2 +1,2 @@
-https://github.com/add2cal/add-to-calendar-button/blob/982afb959ff2197a395b58514b8f883d5567001a/dist/atcb.min.js
-https://github.com/add2cal/add-to-calendar-button/blob/982afb959ff2197a395b58514b8f883d5567001a/assets/css/atcb.min.css
+https://github.com/add2cal/add-to-calendar-button/blob/v1.18.8/dist/atcb.min.js
+https://github.com/add2cal/add-to-calendar-button/blob/v1.18.8/assets/css/atcb.min.css

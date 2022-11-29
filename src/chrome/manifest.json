@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "Gradescope Add to Calendar",
+    "version": "0.0.4",
+    "description": "Adds a add to calendar button to all student assignments on Gradescope.",
+    "icons": {
+        "16": "assets/icons/icon-16.png",
+        "32": "assets/icons/icon-32.png",
+        "48": "assets/icons/icon-48.png",
+        "128": "assets/icons/icon-128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.gradescope.com/courses/*"
+            ],
+            "css": [
+                "assets/css/calendar.css",
+                "assets/add-to-calendar-button/atcb.min.css"
+            ],
+            "js": [
+                "gradescope_calendar_button.js",
+                "assets/add-to-calendar-button/atcb.min.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "matches": [
+                "*://*.gradescope.com/*"
+            ],
+            "resources": [
+                "assets/add-to-calendar-button/atcb.min.js",
+                "assets/add-to-calendar-button/atcb.min.css",
+                "assets/css/button.css"
+            ]
+        }
+    ]
+}

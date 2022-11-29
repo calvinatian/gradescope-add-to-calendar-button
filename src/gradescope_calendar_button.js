@@ -62,13 +62,17 @@ const convertTime12to24 = (time12h) => {
     return `${hours}:${minutes}`;
 }
 
-// generate calendar button html
-function createCalendarHTML(startDate, endDate, assignmentName, assignmentLink) {
-    // example startDate/endDate
-    // APR 27 AT 12:02AM
-    // APR 29 AT 11:59PM
-    startDate = startDate.split(" ");
-    endDate = endDate.split(" ");
+/**
+ * Generate calendar button html for the add to calendar button library.
+ * @param {string} startDate - Contains month day, and time assignment starts. Ex: "APR 27 AT 12:02AM"
+ * @param {string} endDate - Contains month day, and time assignment ends. Ex: "APR 27 AT 12:02AM"
+ * @param {string} assignmentName - Name of the assignment. Used as the calendar event title.
+ * @param {string} assignmentLink - Link to the assignment. Used as the calendar event location.
+ * @param {boolean} useEndDateOnly - Controls if start date should be the same as end date.
+ */
+function createCalendarHTML(startDate, endDate, assignmentName, assignmentLink = "", useEndDateOnly = true) {
+    endDate         = endDate.split(" ");
+    startDate       = startDate.split(" ");
     let startMonth  = months[startDate[0].toLowerCase()];
     let endMonth    = months[endDate[0].toLowerCase()];
     let startDay    = startDate[1];
@@ -78,6 +82,13 @@ function createCalendarHTML(startDate, endDate, assignmentName, assignmentLink) 
     if (startMonth > endMonth) endYear++;
     startTime       = convertTime12to24(startDate[3]);
     endTime         = convertTime12to24(endDate[3]);
+
+    if (useEndDateOnly) {
+        startDay    = endDay;
+        startMonth  = endMonth;
+        startYear   = endYear;
+        startTime   = endTime;
+    }
 
     let calHTML = `<div class="atcb atcb-custom-style" style="display:none;">
     {
@@ -137,7 +148,7 @@ for (let i = 0, row; row = table.rows[i]; i++) {
         if (j == 3 && dates) {
             // calendar column
             let startDate = dates[0], endDate = dates[1];
-            col.innerHTML = createCalendarHTML(startDate, endDate, assignmentName, assignmentLink);;
+            col.innerHTML = createCalendarHTML(startDate, endDate, assignmentName, assignmentLink, true);
         }
     }
 }

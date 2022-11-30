@@ -1,8 +1,8 @@
 # Gradescope Add to Calendar Button
 
 <div align="center">
-    <img alt="Mozilla AMO link" src="https://img.shields.io/amo/v/gradescope-add-to-calendar" />
-    <img alt="Chrome Web Store" src="https://img.shields.io/chrome-web-store/v/bdbeeblaipbingbdhkgmkoefpfolpjmg" />
+    <a href="https://addons.mozilla.org/en-US/firefox/addon/gradescope-add-to-calendar/"><img alt="Mozilla AMO link" src="https://img.shields.io/amo/v/gradescope-add-to-calendar" /></a>
+    <a href="https://chrome.google.com/webstore/detail/gradescope-add-to-calenda/bdbeeblaipbingbdhkgmkoefpfolpjmg"><img alt="Chrome Web Store" src="https://img.shields.io/chrome-web-store/v/bdbeeblaipbingbdhkgmkoefpfolpjmg" /></a>
 </div>
 
 Adds a button to create calendar events next to all Gradescope assignments.

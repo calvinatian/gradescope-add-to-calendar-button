@@ -1,8 +1,14 @@
 # Gradescope Add to Calendar Button
 
-![Mozilla AMO link](https://img.shields.io/amo/v/gradescope-add-to-calendar)
+<div align="center">
+    <img alt="Mozilla AMO link" src="https://img.shields.io/amo/v/gradescope-add-to-calendar" />
+    <img alt="Chrome Web Store" src="https://img.shields.io/chrome-web-store/v/bdbeeblaipbingbdhkgmkoefpfolpjmg" />
+</div>
 
 Adds a button to create calendar events next to all Gradescope assignments.
+
+![Example image showing button column](assets/example1.png)
+![Example image showing button calendar options](assets/example2.png)
 
 Uses [Add to Calendar Button](https://github.com/add2cal/add-to-calendar-button) to generate links.
 

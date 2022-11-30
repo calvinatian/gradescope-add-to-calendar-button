@@ -1,13 +1,13 @@
 {
     "manifest_version": 3,
     "name": "Gradescope Add to Calendar",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Adds a add to calendar button to all student assignments on Gradescope.",
     "icons": {
-        "16": "assets/icons/icon-16.png",
-        "32": "assets/icons/icon-32.png",
-        "48": "assets/icons/icon-48.png",
-        "128": "assets/icons/icon-128.png"
+        "16": "assets/icons/16x16.png",
+        "32": "assets/icons/32x32.png",
+        "48": "assets/icons/48x48.png",
+        "128": "assets/icons/128x128.png"
     },
     "content_scripts": [
         {

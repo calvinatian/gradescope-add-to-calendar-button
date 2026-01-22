@@ -66,11 +66,12 @@ const convertTime12to24 = (time12h) => {
  * Generate calendar button html for the add to calendar button library.
  * @param {string} startDate - Contains month day, and time assignment starts. Ex: "APR 27 AT 12:02AM"
  * @param {string} endDate - Contains month day, and time assignment ends. Ex: "APR 27 AT 12:02AM"
- * @param {string} assignmentName - Name of the assignment. Used as the calendar event title.
+ * @param {string} courseName - Name of the course. Used in the calendar event title
+ * @param {string} assignmentName - Name of the assignment. Used in the calendar event title.
  * @param {string} assignmentLink - Link to the assignment. Used as the calendar event location.
  * @param {boolean} useEndDateOnly - Controls if start date should be the same as end date.
  */
-function createCalendarHTML(startDate, endDate, assignmentName, assignmentLink = "", useEndDateOnly = true) {
+function createCalendarHTML(startDate, endDate, courseName, assignmentName, assignmentLink = "", useEndDateOnly = true) {
     endDate         = endDate.split(" ");
     startDate       = startDate.split(" ");
     let startMonth  = months[startDate[0].toLowerCase()];
@@ -92,7 +93,7 @@ function createCalendarHTML(startDate, endDate, assignmentName, assignmentLink =
 
     let calHTML = `<div class="atcb atcb-custom-style" style="display:none;">
     {
-        "name":"${assignmentName}",
+        "name":"${assignmentName} | ${courseName}",
         "description":"",
         "label":"${assignmentName}",
         "size":"3",
@@ -148,7 +149,8 @@ for (let i = 0, row; row = table.rows[i]; i++) {
         if (j == 3 && dates) {
             // calendar column
             let startDate = dates[0], endDate = dates[1];
-            col.innerHTML = createCalendarHTML(startDate, endDate, assignmentName, assignmentLink, true);
+            let courseName = document.querySelector(".courseHeader--title").innerText;
+            col.innerHTML = createCalendarHTML(startDate, endDate, courseName, assignmentName, assignmentLink, true);
         }
     }
 }
